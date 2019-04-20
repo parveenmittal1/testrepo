@@ -82,13 +82,13 @@ app.get('/wordsumsentencesum',(req,res) =>{
 	var alphaNum=0;
 	consol.log(array)
 	 for (var i = 0; i < array.length; i++) {
-	 	if(array.charAt(i)==' ' || array(i)=='.')
+	 	if(array.charAt(i)==',' || array(i)=='.')
 	 	{
 	 		wordNum++;
 	 		if(array[i]=='.'&&arraycharCodeAt(i+1)>65&&arraycharCodeAt(i+1)<90)
 	 		sentenseNum++;
 	 	}
-	 	 if (array[i]!=' '&& array[i]!='.')
+	 	 if (array[i]!=','&& array[i]!='.')
 	 	 	{alphaNum++;}
 }
     //res.send('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum);
