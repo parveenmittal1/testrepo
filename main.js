@@ -93,9 +93,9 @@ app.post('/wordsumsentencesum',(req,res) =>{
 	 	 	{alphaNum++;}
 
 }
-res.end()
+
     res.send('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum);
-    //console.log('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum)
+   res.end() //console.log('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum)
 })
 
 
