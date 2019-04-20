@@ -73,7 +73,7 @@ document.body.removeChild(link);
 
 
 
-app.post('/wordsumsentencesum',(req,res) =>{
+app.get('/wordsumsentencesum',(req,res) =>{
 	var array1= req.body.name;
 	var array2 = array1.split(" ");
 	var array='my name is donke y.Im not doing anything.'
@@ -81,6 +81,7 @@ app.post('/wordsumsentencesum',(req,res) =>{
 	var wordNum=0;
 	var sentenseNum=0;
 	var alphaNum=0;
+	consol.log(array)
 	 for (var i = 0; i < array.length; i++) {
 	 	if(array[i]==',' || array[i]== '.')
 	 	{
