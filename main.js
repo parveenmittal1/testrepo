@@ -35,4 +35,21 @@ function reverse(s){
     return s.split("").reverse().join("");
 }
 
+
+//##########################################
+
+app.post('/sumarray ', (req, res) => {
+
+  var array = req.body.name;
+  var sum=0;
+  for (var i = 0; i < array.length; i++) {
+    sum=sum +array[i]
+}
+
+  res.send('Sum is : '+port);
+})
+
+
+
+
 app.listen(port)
