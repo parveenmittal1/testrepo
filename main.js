@@ -46,7 +46,7 @@ app.post('/sumarray ', (req, res) => {
     sum=sum +array[i]
 }
 
-  res.send('Sum is : '+port);
+  res.send('Sum is : '+sum);
 })
 
 
