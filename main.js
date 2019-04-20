@@ -38,7 +38,7 @@ function reverse(s){
 
 //##########################################
 
-app.post('/sumarray ', (req, res) => {
+app.post('/sumarray', (req, res) => {
 
   var array = req.body.name;
   var sum=0;
