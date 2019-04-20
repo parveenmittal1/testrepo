@@ -55,9 +55,13 @@ app.post('/concatarray',(req,res) =>{
 	var str='';
 	 for (var i = 0; i < array.length; i++) {
     str=str +array[i]
-
-    res.send('Sum is : '+str);
 }
+    res.send('String is : '+str);
+})
+
+
+app.get('/test11', (req, res) => {
+  res.send('hello from parveen from PORT: '+port);
 })
 
 
