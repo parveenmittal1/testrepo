@@ -73,7 +73,7 @@ document.body.removeChild(link);
 
 
 
-app.get('/wordsumsentencesum',(req,res) =>{
+app.post('/wordsumsentencesum',(req,res) =>{
 	var array1= req.body.name;
 	var array = array1.split(" ");
 	var wordNum=0;
