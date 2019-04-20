@@ -62,7 +62,7 @@ app.post('/concatarray',(req,res) =>{
 
 app.get('/test11', (req, res) => {
 	var url='https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001815/Alaskan-Malamute-On-White-03-400x267.jpg'
-  res.send('hello from parveen from PORT: '+ url);
+  res.send(url);
 })
 
 
