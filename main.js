@@ -68,31 +68,27 @@ document.body.appendChild(link);
 link.click();
 document.body.removeChild(link);
 	var url='https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001815/Alaskan-Malamute-On-White-03-400x267.jpg'
-  res.send( url);
+  res.send(link);
 })
 
 
 
 app.get('/wordsumsentencesum',(req,res) =>{
 	var array1= req.body.name;
-	var array2 = array1.split(" ");
-	var array='my name is donke y.Im not doing anything.'
+	var array="You are a dounky";
 	array= array.split(" ");
 	var wordNum=0;
 	var sentenseNum=0;
 	var alphaNum=0;
-	consol.log(array)
 	 for (var i = 0; i < array.length; i++) {
-	 	if(array[i]==',' || array[i]== '.')
+	 	if(array.charAt(i)==' ' || array(i)=='.')
 	 	{
 	 		wordNum++;
 	 		if(array[i]=='.'&&arraycharCodeAt(i+1)>65&&arraycharCodeAt(i+1)<90)
 	 		sentenseNum++;
 	 	}
-	 	 if (array[i]!=','&& array[i]!='.')
-	 	 	alphaNum++;
-
-   
+	 	 if (array[i]!=' '&& array[i]!='.')
+	 	 	{alphaNum++;}
 }
     res.send('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum);
     consol.log('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum)
