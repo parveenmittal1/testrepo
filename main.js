@@ -100,7 +100,7 @@ res.end()
 
 
 
-app.get('/changeparagraph',(req,res) =>{
+app.post('/changeparagraph',(req,res) =>{
 	var array= req.body.name;
 	var replace=req.body.replace;
 	var replaceby=req.body.replaceby;
