@@ -50,6 +50,17 @@ app.post('/sumarray', (req, res) => {
 })
 
 
+app.post('/concatarray',(req,res) =>{
+	var array= req.body.name;
+	var str='';
+	 for (var i = 0; i < array.length; i++) {
+    str=str +array[i]
+
+    res.send('Sum is : '+str);
+}
+})
+
+
 
 
 app.listen(port)
