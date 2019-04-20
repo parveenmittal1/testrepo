@@ -107,6 +107,7 @@ app.post('/changeparagraph',(req,res) =>{
 	//array='the  dog is sleeping and Dogs are kidding  dog r';
 	//replace='dog';
 	//replaceby='cat';
+	replaceby.bold()
 	 var re = new RegExp(replace, 'g');
 	var res1 = array.replace(re, replaceby);
     res.send('The resulte is >>>'+ res1);
