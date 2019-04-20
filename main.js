@@ -7,6 +7,10 @@ app.get('/test1', (req, res) => {
   res.send('hello from parveen from PORT: '+port);
 })
 
+app.get('/', (req, res) => {
+  res.send('Greetings from parveen from PORT: '+port);
+})
+
 
 app.post('/test2', (req, res) => {
 
