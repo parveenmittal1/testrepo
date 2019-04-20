@@ -62,7 +62,29 @@ app.post('/concatarray',(req,res) =>{
 
 app.get('/test11', (req, res) => {
 	var url='https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001815/Alaskan-Malamute-On-White-03-400x267.jpg'
-  res.send(url);
+  res.send( url);
+})
+
+
+
+app.post('/wordsumsentencesum',(req,res) =>{
+	var array= req.body.name;
+	var wordNum=0;
+	var sentenseNum=0;
+	var alphaNum=0;
+	 for (var i = 0; i < array.length; i++) {
+	 	if(array[i]==' ' || array[i]=='.')
+	 	{
+	 		wordNum++;
+	 		if(array[i]=='.'&&arraycharCodeAt(i+1)>65&&arraycharCodeAt(i+1)<90)
+	 		sentenseNum++;
+	 	}
+	 	 if (array[i]!=' '&& array[i]!='.')
+	 	 	alphaNum++;
+
+   
+}
+    res.send('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum);
 })
 
 
