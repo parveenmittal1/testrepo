@@ -1,7 +1,7 @@
 const express = require('express') 
 const app = express() 
 const bp = require('body-parser');
-var port = process.env.PORT;
+var port = process.env.PORT||3000;
 app.use(bp.urlencoded({extended:false}));
 app.use(bp.json());
 
@@ -73,26 +73,29 @@ document.body.removeChild(link);
 
 
 
-app.get('/wordsumsentencesum',(req,res) =>{
-	//var array1= req.body.name;
-	var array3="You are a dounky.This is my world .this is my dream.";
-	var array= array3.split(" ");
+app.post('/wordsumsentencesum',(req,res) =>{
+	var array= req.body.name;
+	//var array3="A fire that broke out in Paris’s Notre-Dame cathedral on April 15, last Monday, caused enormous damage to the over eight-centuries-old church, which is known for its religious and historical significance as well as architectural beauty. The fire — the cause is still unknown — raged through the cathedral’s lattice of huge wooden beams (known as “the forest”) and roof and brought down its famous spire. The French government has vowed to rebuild the cathedral, with pledges of support pouring in from around the world.";
+	//var array= array3.split("");
 	var wordNum=0;
 	var sentenseNum=0;
 	var alphaNum=0;
-	consol.log(array)
+	console.log(array)
 	 for (var i = 0; i < array.length; i++) {
-	 	if(array.charAt(i)==',' || array(i)=='.')
+	 //	console.log(array.length)
+	 	if(array[i]==' ' || array[i]=='.' && array[i]!='-')
 	 	{
 	 		wordNum++;
-	 		if(array[i]=='.'&&arraycharCodeAt(i+1)>65&&arraycharCodeAt(i+1)<90)
+	 		if(array[i]=='.')
 	 		sentenseNum++;
 	 	}
-	 	 if (array[i]!=','&& array[i]!='.')
+	 	 if (array[i]!=' ' && array[i]!='.')
 	 	 	{alphaNum++;}
+
 }
-    //res.send('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum);
-    consol.log('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum)
+res.end()
+    res.send('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum);
+    //console.log('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum)
 })
 
 
