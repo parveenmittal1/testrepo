@@ -100,7 +100,7 @@ res.end()
 
 
 
-app.get('/changeparagraph',(req,res) =>{
+app.post('/changeparagraph',(req,res) =>{
 	var array= req.body.name;
 	var replace=req.body.replace;
 	var replaceby=req.body.replaceby;
@@ -109,8 +109,8 @@ app.get('/changeparagraph',(req,res) =>{
 	replaceby='cat';
 	 var re = new RegExp(replace, 'g');
 	var res1 = array.replace(re, replaceby.bold());
-    res.send('The resulte is '+ res);
-    console.log(res1)
+    res.send('The resulte is '+ res1);
+    console.log(res)
 })
 
 
