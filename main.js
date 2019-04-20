@@ -74,12 +74,13 @@ document.body.removeChild(link);
 
 
 app.get('/wordsumsentencesum',(req,res) =>{
-	var array1= req.body.name;
-	var array="You are a dounky";
-	array= array.split(" ");
+	//var array1= req.body.name;
+	var array3="You are a dounky.This is my world .this is my dream.";
+	var array= array3.split(" ");
 	var wordNum=0;
 	var sentenseNum=0;
 	var alphaNum=0;
+	consol.log(array)
 	 for (var i = 0; i < array.length; i++) {
 	 	if(array.charAt(i)==' ' || array(i)=='.')
 	 	{
@@ -90,7 +91,7 @@ app.get('/wordsumsentencesum',(req,res) =>{
 	 	 if (array[i]!=' '&& array[i]!='.')
 	 	 	{alphaNum++;}
 }
-    res.send('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum);
+    //res.send('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum);
     consol.log('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum)
 })
 
