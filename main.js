@@ -1,7 +1,13 @@
 const express = require('express') 
 const app = express() 
-
+const bp = require('body-parser');
 var port = process.env.PORT;
+app.use(bp.urlencoded({extended:false});
+app.use(bp.json());
+
+
+// ########################################################
+
 
 app.get('/test1', (req, res) => {
   res.send('hello from parveen from PORT: '+port);
