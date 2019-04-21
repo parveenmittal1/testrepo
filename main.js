@@ -61,14 +61,9 @@ app.post('/concatarray',(req,res) =>{
 
 
 app.get('/test11', (req, res) => {
-	var link = document.createElement('a');
-link.href = 'https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001815/Alaskan-Malamute-On-White-03-400x267.jpg';
-link.download = 'Download.jpg';
-document.body.appendChild(link);
-link.click();
-document.body.removeChild(link);
-	var url='https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001815/Alaskan-Malamute-On-White-03-400x267.jpg'
-  res.send(link);
+var url ='https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/2017/11/13001815/Alaskan-Malamute-On-White-03-400x267.jpg';
+
+  res.send(<img src='url'>);
 })
 
 
@@ -100,17 +95,17 @@ res.end()
 
 
 
-app.post('/changeparagraph',(req,res) =>{
+app.get('/changeparagraph',(req,res) =>{
 	var array= req.body.name;
 	var replace=req.body.replace;
 	var replaceby=req.body.replaceby;
-	//array='the  dog is sleeping and Dogs are kidding  dog r';
-	//replace='dog';
-	//replaceby='cat';
+	array='the  dog is sleeping and Dogs are kidding  dog r';
+	replace='dog';
+	replaceby='cat';
 	 var re = new RegExp(replace, 'g');
 	var res1 = array.replace(re, replaceby.bold());
     res.send('The resulte is '+ res1);
-   // console.log(res1)
+    console.log(res1)
 })
 
 
