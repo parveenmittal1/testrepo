@@ -67,6 +67,10 @@ var url ='https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/201
 })
 
 
+app.get('/playvideo', (req, res) => {
+var url ='https://www.youtube.com/watch?v=5gjr15aWp24';
+  res.send('<'+'img src='+url+'>');
+})
 
 
 app.post('/wordsumsentencesum',(req,res) =>{
