@@ -79,7 +79,7 @@ app.post('/arraybeauty',(req,res) =>{
 	var array= req.body.name;
 	 array.sort();
 	 var str=''
-	 for(var i=0;i<array.length();i++)
+	 for(var i=0;i<array.length;i++)
 	 {
 	 	str=str+'<li>'+array[i]+'</li> '
 	 }
