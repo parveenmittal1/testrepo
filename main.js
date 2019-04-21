@@ -73,6 +73,20 @@ var url ='https://www.youtube.com/watch?v=5gjr15aWp24';
 })
 
 
+
+
+app.post('/arraybeauty',(req,res) =>{
+	var array= req.body.name;
+	 array.sort();
+	 var str=''
+	 for(var i=0;i<array.length();i++)
+	 {
+	 	str=str+'<li>'+array[i]+'</li> '
+	 }
+    res.send('String is : '+str);
+})
+
+
 app.post('/wordsumsentencesum',(req,res) =>{
 	var array= req.body.name;
 	//var array3="A fire that broke out in Paris’s Notre-Dame cathedral on April 15, last Monday, caused enormous damage to the over eight-centuries-old church, which is known for its religious and historical significance as well as architectural beauty. The fire — the cause is still unknown — raged through the cathedral’s lattice of huge wooden beams (known as “the forest”) and roof and brought down its famous spire. The French government has vowed to rebuild the cathedral, with pledges of support pouring in from around the world.";
