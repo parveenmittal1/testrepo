@@ -124,7 +124,7 @@ app.post('/changeparagraph',(req,res) =>{
 	var replaceby=req.body.replaceby;
 	//array='the  dog is sleeping and Dogs are kidding  dog r';
 	//replace='dog';
-	replaceby='<i>'+'<b>'+'cat'+'</b>'+'</i>';
+	replaceby='<i>'+'<b>'+replaceby+'</b>'+'</i>';
 	 var re = new RegExp(replace, 'g');
 	var res1 = array.replace(re, replaceby);
     res.send('The resulte is '+ res1);
