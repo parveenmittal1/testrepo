@@ -66,9 +66,9 @@ var url ='https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/201
   res.send('<'+'img src='+url+'>');
 })
 
-app.get('/atgoogle',(req,res) =>{
-//	var array= req.body.name;
-	var array1='Ram';
+app.post('/atgoogle',(req,res) =>{
+	var array1= req.body.name;
+	//var array1='Ram';
 	var str='https://www.google.com/search?q='+array1+'&rlz=1C1CHBF_enIN840IN840&oq='+array1+'&aqs=chrome..69i57.1796j0j8&sourceid=chrome&ie=UTF-8';
     res.send("<script>window.open('"+str+"','_self')</script>");
 
