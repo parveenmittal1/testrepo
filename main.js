@@ -6,9 +6,9 @@ app.use(bp.urlencoded({extended:false}));
 app.use(bp.json());
 
 
-// ########################################################
+// #########################################################
 
-
+var counter1=0;
 app.get('/test1', (req, res) => {
   res.send('hello from parveen from PORT: '+port);
 })
@@ -66,17 +66,27 @@ var url ='https://s3.amazonaws.com/cdn-origin-etr.akc.org/wp-content/uploads/201
   res.send('<'+'img src='+url+'>');
 })
 
+app.get('/atgoogle',(req,res) =>{
+//	var array= req.body.name;
+	var array1='Ram';
+	var str='https://www.google.com/search?q='+array1+'&rlz=1C1CHBF_enIN840IN840&oq='+array1+'&aqs=chrome..69i57.1796j0j8&sourceid=chrome&ie=UTF-8';
+    res.send("<script>window.open('"+str+"','_self')</script>");
 
-app.get('/playvideo', (req, res) => {
-var url ='https://www.youtube.com/watch?v=5gjr15aWp24';
-  res.send('<'+'img src='+url+'>');
+})
+
+
+app.get('/Youtubevideo', (req, res) => {
+var url ='https://www.youtube.com/watch?v=2VUludkxZz0';
+
+  res.send('<iframe src='+url+'></iframe>');
+  
 })
 
 
 
-
-app.post('/arraybeauty',(req,res) =>{
-	var array= req.body.name;
+app.get('/arraybeauty',(req,res) =>{
+	var array1= req.body.name;
+	var array=[2 ,3, 4,78,5];
 	 array.sort();
 	 var str=''
 	 for(var i=0;i<array.length;i++)
@@ -86,17 +96,13 @@ app.post('/arraybeauty',(req,res) =>{
     res.send('String is : '+str);
 })
 
-
 app.post('/wordsumsentencesum',(req,res) =>{
 	var array= req.body.name;
-	//var array3="A fire that broke out in Paris’s Notre-Dame cathedral on April 15, last Monday, caused enormous damage to the over eight-centuries-old church, which is known for its religious and historical significance as well as architectural beauty. The fire — the cause is still unknown — raged through the cathedral’s lattice of huge wooden beams (known as “the forest”) and roof and brought down its famous spire. The French government has vowed to rebuild the cathedral, with pledges of support pouring in from around the world.";
-	//var array= array3.split("");
 	var wordNum=0;
 	var sentenseNum=0;
 	var alphaNum=0;
 	console.log(array)
 	 for (var i = 0; i < array.length; i++) {
-	 //	console.log(array.length)
 	 	if(array[i]==' ' || array[i]=='.' && array[i]!='-')
 	 	{
 	 		wordNum++;
@@ -108,7 +114,6 @@ app.post('/wordsumsentencesum',(req,res) =>{
 
 }
     res.send('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum);
-    //console.log('alphaNum  :'+alphaNum+ 'sentenseNum :'+ sentenseNum+ 'wordNum : ' + wordNum)
 })
 
 
@@ -128,5 +133,25 @@ app.get('/changeparagraph',(req,res) =>{
 
 
 
+
+app.get('/addbutton',(req,res)=>
+{
+	
+res.send('<form action="/increaseCounter" method="post" > <input type="submit" value="Submit"> </form>');  
+})
+
+
+
+
+
+app.get('/getcounter', (req, res) => {
+  res.send('Counter is :'+counter1);
+})
+
+
+app.post('/increaseCounter',(req,res)=>{
+	counter1++;
+	res.send('counter inceased')
+})
 
 app.listen(port)
