@@ -84,9 +84,9 @@ var url ='https://www.youtube.com/watch?v=2VUludkxZz0';
 
 
 
-app.get('/arraybeauty',(req,res) =>{
-	var array1= req.body.name;
-	var array=[2 ,3, 4,78,5];
+app.post('/arraybeauty',(req,res) =>{
+	var array= req.body.name;
+	//var array=[2 ,3, 4,78,5];
 	 array.sort();
 	 var str=''
 	 for(var i=0;i<array.length;i++)
@@ -118,17 +118,17 @@ app.post('/wordsumsentencesum',(req,res) =>{
 
 
 
-app.get('/changeparagraph',(req,res) =>{
+app.post('/changeparagraph',(req,res) =>{
 	var array= req.body.name;
 	var replace=req.body.replace;
 	var replaceby=req.body.replaceby;
-	array='the  dog is sleeping and Dogs are kidding  dog r';
-	replace='dog';
-	replaceby='cat';
+	//array='the  dog is sleeping and Dogs are kidding  dog r';
+	//replace='dog';
+	replaceby='<i>'+'<b>'+'cat'+'</b>'+'</i>';
 	 var re = new RegExp(replace, 'g');
-	var res1 = array.replace(re, replaceby.bold());
+	var res1 = array.replace(re, replaceby);
     res.send('The resulte is '+ res1);
-    console.log(res1)
+  //  console.log(res1)
 })
 
 
